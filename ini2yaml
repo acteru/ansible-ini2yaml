@@ -36,7 +36,6 @@ if __name__ == "__main__":
                 for hostvar in hostvars:
                     value = parse_value(hostvar[1])
                     inventory.setdefault('all', {}).setdefault('children', {}).setdefault(group[0], {}).setdefault('hosts', {})[hostname][hostvar[0]] = value
-                print(inventory)
         elif group[1] == 'vars':  # section contains group vars
             for name, value in parser.items(section):
                 value = parse_value(value)
